@@ -1,0 +1,74 @@
+body{
+    background-color: white;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+h1{
+    font-style: italic;
+    font-weight: bold;
+}
+h2{
+    font-weight: bold;
+}
+nav{
+    background-color: black;
+
+}
+nav li{
+    display: inline;
+    padding-right:20px;
+    padding-left: 20px;
+}
+nav a{
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+}
+nav li a:hover{
+    text-decoration-line:underline;
+    text-decoration-style: dashed;
+    text-decoration-color: white;
+}
+nav li a:focus{
+    text-decoration-line:underline;
+    text-decoration-style: dashed;
+    text-decoration-color: white;
+}
+.skip a{
+    position: absolute;
+    top: -40px;
+    color: white;
+    font-size: 10px;
+    text-decoration: none;
+}
+.skip a:focus{
+    position: absolute;
+    top: 15px;
+    text-decoration-line:underline;
+    text-decoration-style: dashed;
+    text-decoration-color: white;
+}
+.about-image, .classic-image, .holiday-image{
+    border: solid 5px black;
+}
+.about, .about-image{
+    overflow: scroll;
+    text-align: center;
+}
+.classic, .classic-image{
+    display: grid;
+    grid-column: 1/-1;
+    overflow: scroll;
+}
+.classic-image img{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+    justify-self: center;
+}
+.holiday, .holiday-image{
+    display: flex;
+}
