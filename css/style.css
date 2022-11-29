@@ -19,7 +19,7 @@ h2{
 }
 nav{
     background-color: black;
-    padding: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
     margin-top: 10px;
 
 }
@@ -32,7 +32,7 @@ nav li{
 nav a{
     color: white;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 15px;
     text-decoration: none;
 }
 nav li a:hover{
@@ -51,7 +51,7 @@ nav li a:focus{
     top: -30px;
     left: 5px;
     color: black;
-    font-size: 12px;
+    font-size: 15px;
     text-decoration: none;
 }
 .skip a:focus{  
@@ -73,12 +73,11 @@ p{
     text-align: center;
 }
 .about-image img{
-    width: 490px;
+    width: 500px;
 }
 .classic, .classic-image{
     display: grid;
     grid-column: 1/-1;
-    overflow: scroll;
 }
 .classic-image img{
     padding-top: 10px;
@@ -98,14 +97,6 @@ p{
     border: purple solid 5px;
     padding: 0px 0px 0px 0px;
 }
-.holiday-image img:nth-child(odd){
-    border: red solid 5px;
-    padding: 0px 0px 0px 0px;
-}
-.holiday-image img:nth-child(even){
-    border: green solid 5px;
-    padding: 0px 0px 0px 0px;
-}
 .holiday, .holiday-image{
     display: flex;
     flex-direction: column;
@@ -120,4 +111,63 @@ p{
     width: 300px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.holiday-image img:nth-child(odd){
+    border: red solid 5px;
+    padding: 0px 0px 0px 0px;
+}
+.holiday-image img:nth-child(even){
+    border: green solid 5px;
+    padding: 0px 0px 0px 0px;
+}
+
+@media screen and (min-width: 600px){
+    .about-image img{
+        width: 1000px;
+    }
+    .classic{
+        display: grid;
+    }
+    .classic-image img{
+        width: 350px;
+    }
+    .classic-image img:nth-child(2){
+        align-self: stretch;
+    }
+    .classic-image img:nth-child(3){
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-left: auto;
+        margin-right: auto;
+        width: 450px;
+    }
+    .classic-image img:nth-child(6){
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-left: auto;
+        margin-right: auto;
+        width: 450px;
+    }
+    .classic-image img:nth-child(9){
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-left: auto;
+        margin-right: auto;
+        width: 450px;
+    }
+    .classic-image img:nth-child(12){
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-left: auto;
+        margin-right: auto;
+        width: 450px;
+    }
+    .holiday{
+        display: flex;
+    }
+    .holiday-image img{
+        width: 350px;
+    }
+    
+
 }
