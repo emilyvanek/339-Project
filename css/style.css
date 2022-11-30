@@ -19,22 +19,24 @@ h2{
 }
 nav{
     background-color: black;
-    padding: 10px 10px 10px 10px;
+    padding: 4px 10px 10px 10px;
     margin-top: 10px;
+    text-align: center;
 
 }
 nav li{
-    display: inline;
-    padding-right:20px;
-    padding-left: 20px;
-    /* text-align: center; */
+    display: block;
+    padding-top: 10px;
+    margin-top: 0px;
+    line-height: 10px;
 }
-nav a{
+nav li a{
     color: white;
     font-weight: bold;
     font-size: 15px;
     text-decoration: none;
 }
+/* how to make space between links */
 nav li a:hover{
     text-decoration-line:underline;
     text-decoration-style: dashed;
@@ -45,7 +47,9 @@ nav li a:focus{
     text-decoration-style: dashed;
     text-decoration-color: white;
 }
-/* keep it underlined after click */
+.active a{ 
+    text-decoration-line: underline;
+}
 .skip a{
     position: absolute;
     top: -30px;
@@ -63,17 +67,13 @@ nav li a:focus{
 }
 p{
     padding: 10px 10px 10px 10px;
-    line-height: 25px ;
+    line-height: 25px;
 }
-.about-image, .classic-image, .holiday-image{
+.classic-image, .holiday-image{
     border: solid 5px black;
 }
-.about, .about-image{
-    overflow: scroll;
-    text-align: center;
-}
 .about-image img{
-    width: 500px;
+    width: 90%;
 }
 .classic, .classic-image{
     display: grid;
@@ -85,7 +85,7 @@ p{
     padding-right: 0px;
     padding-left: 0px;
     justify-self: center;
-    width: 300px;
+    width: 70%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -108,7 +108,7 @@ p{
     padding-right: 0px;
     padding-left: 0px;
     justify-self: center;
-    width: 300px;
+    width: 70%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -122,52 +122,188 @@ p{
 }
 
 @media screen and (min-width: 600px){
+   h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    }
+   h2{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px 20px 20px 20px;
+    margin-top: 10px;
+    }
+    nav{
+        background-color: black;
+        padding: 10px 10px 10px 10px;
+        margin-top: 10px;
+    }
+    nav li{
+        display: inline;
+        padding-right:20px;
+        padding-left: 20px;
+        /* text-align: center;  */
+    }
+    nav a{
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+    }
     .about-image img{
-        width: 1000px;
+        width: 80%;
     }
     .classic{
         display: grid;
     }
     .classic-image img{
-        width: 350px;
+        width: 70%;
     }
     .classic-image img:nth-child(2){
         align-self: stretch;
     }
-    .classic-image img:nth-child(3){
+    .classic-image img:nth-child(3n){
         grid-column-start: 1;
         grid-column-end: 3;
         margin-left: auto;
         margin-right: auto;
-        width: 450px;
-    }
-    .classic-image img:nth-child(6){
-        grid-column-start: 1;
-        grid-column-end: 3;
-        margin-left: auto;
-        margin-right: auto;
-        width: 450px;
-    }
-    .classic-image img:nth-child(9){
-        grid-column-start: 1;
-        grid-column-end: 3;
-        margin-left: auto;
-        margin-right: auto;
-        width: 450px;
-    }
-    .classic-image img:nth-child(12){
-        grid-column-start: 1;
-        grid-column-end: 3;
-        margin-left: auto;
-        margin-right: auto;
-        width: 450px;
+        width: 50%;
     }
     .holiday{
         display: flex;
     }
     .holiday-image img{
-        width: 350px;
+        width: 40%;
     }
-    
-
+    .holiday-image{
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-evenly;
+    }
+}
+@media screen and (min-width: 950px){
+    h1{
+        font-size: 45px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+    h2{
+        font-weight: bold;
+        font-size: 35px;
+        padding: 30px 30px 30px 30px;
+        margin-top: 10px;
+    }
+    nav{
+        background-color: black;
+        padding: 15px 15px 15px 15px;
+        margin-top: 10px;
+    }
+    nav li{
+        display: inline;
+        padding-right:20px; 
+        padding-left: 20px;
+        /* how do i make nav in the middle */
+        /* text-align: center;  */
+    }
+    nav a{
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        text-decoration: none;
+    }
+    .about-image img{
+        width: 70%;
+        padding: 0px 0px 0px 0px;
+        /* how can i get the image to fill the border at all views */
+    }
+    .classic-image{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .classic-image img:nth-child(1){
+        grid-column-start: 1;  
+        grid-column-end: 1;  
+        width: 90%;
+    }
+    .classic-image img:nth-child(2){
+        grid-column-start: 2;  
+        grid-column-end: 2;  
+        width: 90%
+    }
+    .classic-image img:nth-child(3){
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        width: 90%;
+    }
+    .classic-image img:nth-child(4){
+        grid-column-start: 4;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        width: 90%;
+    }
+    .classic-image img:nth-child(5){
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+        width: 90%;
+    }
+    .classic-image img:nth-child(6){
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        width: 90%;
+    }
+    .classic-image img:nth-child(7){
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        width: 90%;
+    }
+    .classic-image img:nth-child(8){
+        grid-column-start: 4;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        width: 90%;
+    }
+    .classic-image img:nth-child(9){
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 3;
+        width: 90%;
+    }
+    .classic-image img:nth-child(10){
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        width: 90%;
+    }
+    .classic-image img:nth-child(11){
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        width: 90%;
+    }
+    .classic-image img:nth-child(12){
+        grid-column-start: 4;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        width: 90%;
+    }
+    .holiday-image{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    .holiday-image img{
+        display: flex;
+        width: 25%
+    }
+    /* my flex doesnt even do anything, it doesnt change at 950width */
 }
