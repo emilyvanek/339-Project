@@ -1,36 +1,86 @@
+.animated1{
+    display: inline-block;
+    animation: mover 4s linear forwards; 
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+.animated2{
+    display: inline-block;
+    animation: mover2 4s linear forwards; 
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+.title{
+    display: inline-block;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+@keyframes mover{
+    0%{
+        transform:translateX(-700px);
+    }
+    50%{
+        transform:translateY(10px);
+    }
+}
+@keyframes mover2{
+    0%{
+        transform:translateX(700px);
+    }
+    50%{
+        transform:translateY(10px);
+    }
+}
+body{
+    grid-column: 1/-1;
+    background-image: url('../images/parallax.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 body{
     background-color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
+    color: black;
+    font-weight: bolder;
 }
+
 h1{
-    font-style: italic;
-    font-weight: bold;
-    font-size: 30px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    margin-top: 10px;
-}
-h2{
     font-weight: bold;
     font-size: 20px;
     padding: 10px 10px 10px 10px;
     margin-top: 10px;
 }
-nav{
+nav ul {
+    display: flex;
+    flex-direction: column;
     background-color: black;
     padding: 4px 10px 10px 10px;
     margin-top: 10px;
-    text-align: center;
+    align-items: center;
 
 }
-nav li{
-    display: block;
+nav ul li{
     padding-top: 10px;
     margin-top: 0px;
     line-height: 10px;
 }
-nav li a{
+nav ul li a{
     color: white;
     font-weight: bold;
     font-size: 15px;
@@ -88,6 +138,7 @@ p{
     width: 70%;
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: justify;
 }
 .classic-image img:nth-child(odd){
     border: hotpink solid 5px;
@@ -134,18 +185,15 @@ p{
     padding: 20px 20px 20px 20px;
     margin-top: 10px;
     }
-    nav{
-        background-color: black;
-        padding: 10px 10px 10px 10px;
-        margin-top: 10px;
+    nav ul{
+        flex-direction: row;
+        justify-content: center;
     }
-    nav li{
-        display: inline;
-        padding-right:20px;
+    nav ul li{
+        padding-right: 20px;
         padding-left: 20px;
-        /* text-align: center;  */
     }
-    nav a{
+    nav ul li a{
         color: white;
         font-weight: bold;
         font-size: 20px;
@@ -184,7 +232,7 @@ p{
         justify-content: space-evenly;
     }
 }
-@media screen and (min-width: 950px){
+@media screen and (min-width: 900px){
     h1{
         font-size: 45px;
         padding-bottom: 20px;
@@ -197,19 +245,13 @@ p{
         padding: 30px 30px 30px 30px;
         margin-top: 10px;
     }
-    nav{
+    nav ul{
+        justify-content: space-evenly;
         background-color: black;
         padding: 15px 15px 15px 15px;
         margin-top: 10px;
     }
-    nav li{
-        display: inline;
-        padding-right:20px; 
-        padding-left: 20px;
-        /* how do i make nav in the middle */
-        /* text-align: center;  */
-    }
-    nav a{
+    nav ul li a{
         color: white;
         font-weight: bold;
         font-size: 25px;
@@ -306,4 +348,10 @@ p{
         width: 25%
     }
     /* my flex doesnt even do anything, it doesnt change at 950width */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animated{
+        animation: none;
+    }
 }
