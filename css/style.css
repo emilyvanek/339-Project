@@ -44,7 +44,7 @@
     }
 }
 body{
-    grid-column: 1/-1;
+    /* grid-column: 1/-1; */
     background-image: url('../images/parallax.png');
     background-attachment: fixed;
     background-position: center;
@@ -125,11 +125,18 @@ p{
 .about-image img{
     width: 90%;
 }
-.classic, .classic-image{
+.classic-image{
     display: grid;
-    grid-column: 1/-1;
+    grid-template-columns: 1fr;
 }
-.classic-image img{
+.classic-image div {
+    margin-top: 15px;
+}
+.classic-image div h2{
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+.classic-image div img{
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 0px;
@@ -140,34 +147,37 @@ p{
     margin-bottom: 10px;
     text-align: justify;
 }
-.classic-image img:nth-child(odd){
+.classic-image div:nth-child(odd) img{
     border: hotpink solid 5px;
     padding: 0px 0px 0px 0px;
 }
-.classic-image img:nth-child(even){
+.classic-image div:nth-child(even) img{
     border: purple solid 5px;
     padding: 0px 0px 0px 0px;
 }
-.holiday, .holiday-image{
+.holiday-image{
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
-.holiday-image img{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 0px;
-    padding-left: 0px;
-    justify-self: center;
-    width: 70%;
+.holiday-image div img{
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-self: center;
+    width: 70%;
 }
-.holiday-image img:nth-child(odd){
+.holiday-image div h2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.holiday-image div:nth-child(odd) img{
     border: red solid 5px;
     padding: 0px 0px 0px 0px;
 }
-.holiday-image img:nth-child(even){
+.holiday-image div:nth-child(even) img{
     border: green solid 5px;
     padding: 0px 0px 0px 0px;
 }
@@ -177,12 +187,6 @@ p{
     font-size: 40px;
     padding-bottom: 20px;
     padding-top: 20px;
-    margin-top: 10px;
-    }
-   h2{
-    font-weight: bold;
-    font-size: 30px;
-    padding: 20px 20px 20px 20px;
     margin-top: 10px;
     }
     nav ul{
@@ -202,34 +206,31 @@ p{
     .about-image img{
         width: 80%;
     }
-    .classic{
-        display: grid;
-    }
     .classic-image img{
         width: 70%;
     }
-    .classic-image img:nth-child(2){
-        align-self: stretch;
+    .classic-image {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .classic-image img:nth-child(3n){
-        grid-column-start: 1;
-        grid-column-end: 3;
+    .classic-image div:nth-child(3n + 1){
+        grid-column: 1 / span 2;
+    }
+    .classic-image div:nth-child(3n + 2){
+        grid-column: 3 / span 2;
+    }
+    .classic-image div:nth-child(3n + 3){
+        grid-column: 2 / span 2;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
-    }
-    .holiday{
-        display: flex;
-    }
-    .holiday-image img{
-        width: 40%;
+        width: 100%;
     }
     .holiday-image{
         flex-direction: row;
         flex-wrap: wrap;
-        margin-left: auto;
-        margin-right: auto;
         justify-content: space-evenly;
+    }
+    .holiday-image div {
+        flex-basis: 300px;
     }
 }
 @media screen and (min-width: 900px){
@@ -237,12 +238,6 @@ p{
         font-size: 45px;
         padding-bottom: 20px;
         padding-top: 20px;
-        margin-top: 10px;
-    }
-    h2{
-        font-weight: bold;
-        font-size: 35px;
-        padding: 30px 30px 30px 30px;
         margin-top: 10px;
     }
     nav ul{
@@ -263,91 +258,23 @@ p{
         /* how can i get the image to fill the border at all views */
     }
     .classic-image{
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .classic-image img:nth-child(1){
-        grid-column-start: 1;  
-        grid-column-end: 1;  
-        width: 90%;
+    .classic-image div:nth-child(4n + 1){
+        grid-column: 1 / span 1;
     }
-    .classic-image img:nth-child(2){
-        grid-column-start: 2;  
-        grid-column-end: 2;  
-        width: 90%
+    .classic-image div:nth-child(4n + 2){
+        grid-column: 2 / span 1;
     }
-    .classic-image img:nth-child(3){
-        grid-column-start: 3;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        width: 90%;
+    .classic-image div:nth-child(4n + 3){
+        grid-column: 3 / span 1;
     }
-    .classic-image img:nth-child(4){
-        grid-column-start: 4;
-        grid-column-end: 4;
-        grid-row-start: 1;
-        width: 90%;
+    .classic-image div:nth-child(4n + 4){
+        grid-column: 4 / span 1;
     }
-    .classic-image img:nth-child(5){
-        grid-column-start: 1;
-        grid-column-end: 1;
-        grid-row-start: 2;
-        width: 90%;
+    .holiday-image div {
+        flex-basis: 400px;
     }
-    .classic-image img:nth-child(6){
-        grid-column-start: 2;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        width: 90%;
-    }
-    .classic-image img:nth-child(7){
-        grid-column-start: 3;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        width: 90%;
-    }
-    .classic-image img:nth-child(8){
-        grid-column-start: 4;
-        grid-column-end: 4;
-        grid-row-start: 2;
-        width: 90%;
-    }
-    .classic-image img:nth-child(9){
-        grid-column-start: 1;
-        grid-column-end: 1;
-        grid-row-start: 3;
-        width: 90%;
-    }
-    .classic-image img:nth-child(10){
-        grid-column-start: 2;
-        grid-column-end: 2;
-        grid-row-start: 3;
-        width: 90%;
-    }
-    .classic-image img:nth-child(11){
-        grid-column-start: 3;
-        grid-column-end: 3;
-        grid-row-start: 3;
-        width: 90%;
-    }
-    .classic-image img:nth-child(12){
-        grid-column-start: 4;
-        grid-column-end: 4;
-        grid-row-start: 3;
-        width: 90%;
-    }
-    .holiday-image{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        align-content: center;
-    }
-    .holiday-image img{
-        display: flex;
-        width: 25%
-    }
-    /* my flex doesnt even do anything, it doesnt change at 950width */
 }
 
 @media (prefers-reduced-motion: reduce) {
